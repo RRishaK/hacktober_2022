@@ -1,0 +1,86 @@
+
+#include<stdio.h>
+#include<stdlib.h>//can make  an method using system(cls) either
+#include<conio.h>
+#include<windows.h>
+int getkey();
+void main()
+{ //for(i=0;i<4;i++){for(j=0;j<4;j++){if(mat[i][j]==sol[i][j])continue; else m=1;}}
+    int i, j, key, m=1,    a=3,b=3,  temp;
+   int mat[4][4]={1, 4, 15, 7, 8, 10, 2, 11, 14, 3, 6, 13, 12, 9, 5, 88888};
+   int sol[4][4]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,88888};
+
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<4; j++)
+          printf("%d\t", mat[i][j]);
+          printf("\n");
+    }
+
+while(m==1){
+    key=getkey();
+    if(key==72){
+    temp=mat[a-1][b];
+    mat[a-1][b]=88888;
+    mat[a][b]=temp;
+    a=a-1; system("cls");
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<4; j++)
+          printf("%d\t", mat[i][j]);
+          printf("\n");
+    }
+    for(i=0;i<4;i++){for(j=0;j<4;j++){if(mat[i][j]==sol[i][j]){continue; } else m=1;}} }
+    if(key==75){
+    temp=mat[a][b-1];
+    mat[a][b-1]=88888;
+    mat[a][b]=temp;
+    b=b-1; system("cls");
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<4; j++)
+          printf("%d\t", mat[i][j]);
+          printf("\n");
+    } }
+    if(key==77){
+    temp=mat[a][b+1];
+    mat[a][b+1]=88888;
+    mat[a][b]=temp;
+    b=b+1; system("cls");
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<4; j++)
+          printf("%d\t", mat[i][j]);
+          printf("\n");
+    } }
+    if(key==80){
+    temp=mat[a+1][b];
+    mat[a+1][b]=88888;
+    mat[a][b]=temp;
+    a=a+1; system("cls");
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<4; j++)
+          printf("%d\t", mat[i][j]);
+          printf("\n");
+    } }
+ printf("\n\n\n");
+
+
+
+
+    }
+}
+
+int getkey()
+{
+    int ch;
+    ch=getch();
+    if(ch==0)
+    {
+        ch=getch();
+        return ch;
+    }
+    return ch;
+}
+
